@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Event Planner</h1>
+    <div class="topbar-actions">
+      <button id="exportBtn" class="btn ghost" type="button">Export</button>
+      <label class="btn ghost" for="importFile">Import</label>
+      <input id="importFile" type="file" accept="application/json" hidden>
+      <button id="newEventBtn" class="btn primary" type="button">+ New event</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <input id="eventSearch" type="search" placeholder="Search events…" aria-label="Search events">
+      <ul id="eventList" class="event-list"></ul>
+    </aside>
+
+    <main id="main" class="main"></main>
+  </div>
+
+  <dialog id="modal">
+    <form id="modalForm" method="dialog">
+      <h2 id="modalTitle"></h2>
+      <div id="modalFields" class="fields"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="modalCancel">Cancel</button>
+        <button type="submit" class="btn primary" id="modalSave">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
